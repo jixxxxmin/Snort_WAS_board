@@ -43,7 +43,7 @@ public class GetMenuServlet extends HttpServlet {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                Map<String, String> menuMap = new HashMap<>();
+                Map<String, Object> menuMap = new HashMap<>();
                 menuMap.put("num", rs.getString("menu_id"));
                 menuMap.put("이름", rs.getString("menu_name"));
                 menuMap.put("메뉴", new ArrayList<Map<String, String>>());
