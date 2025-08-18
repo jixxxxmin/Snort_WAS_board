@@ -1,12 +1,15 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.http.*;
+import javax.servlet.http.HttpSession;
+import javax.servlet.annotation.WebServlet;
 
 
 
 
 @WebServlet(name = "GetMenuServlet", urlPatterns = {"/board/menu"})
-public class HelloServlet extends HttpServlet {
+public class GetMenuServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
