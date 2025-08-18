@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 
 
 
-@WebServlet(name = "GetMenuServlet", urlPatterns = {"/board/Menu"})
+@WebServlet(name = "GetMenuServlet", urlPatterns = {"/board/menu"})
 public class HelloServlet extends HttpServlet {
 
     @Override
