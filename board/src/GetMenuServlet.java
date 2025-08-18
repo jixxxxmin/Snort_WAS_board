@@ -33,7 +33,7 @@ public class GetMenuServlet extends HttpServlet {
         String query;
 
         response.setContentType("application/json;charset=UTF-8");
-        List<Map<String, String>> menuList = new ArrayList<>();
+        List<Map<String, Object>> menuList = new ArrayList<>();
         Map<String, Map<String, Object>> menuIDMap = new HashMap<>();
 
         query = "SELECT * FROM Menu";
