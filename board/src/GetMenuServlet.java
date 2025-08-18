@@ -69,7 +69,6 @@ public class GetMenuServlet extends HttpServlet {
                 Map<String, Object> parentMenu = menuIDMap.get(menuID);
 
                 Map<String, String> menuMap = new HashMap<>();
-                menuMap.put("num", rs.getString("submenu_id"));
                 menuMap.put("이름", rs.getString("submenu_name"));
                 menuMap.put("설명", rs.getString("descript"));
 
