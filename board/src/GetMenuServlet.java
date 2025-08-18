@@ -44,11 +44,11 @@ public class GetMenuServlet extends HttpServlet {
 
             while (rs.next()) {
                 Map<String, Object> menuMap = new HashMap<>();
-                menuMap.put("num", rs.getString("menu_id"));
                 menuMap.put("이름", rs.getString("menu_name"));
-                menuMap.put("메뉴", new ArrayList<Map<String, String>>());
+                menuMap.put("메뉴", new ArrayList<Map<String, Object>>());
                 menuList.add(menuMap);
 
+                String menuID = rs.getString("menu_id");
                 menuIDMap.put(menuID, menuMap);
             }
         }
