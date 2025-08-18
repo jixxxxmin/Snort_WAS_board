@@ -7,7 +7,7 @@ MENU_CLASS=$(REPO)/board/WEB-INF/classes
 
 
 # define command
-.PHONY:
+.PHONY: pull menu restart all clean
 
 
 # git pull
