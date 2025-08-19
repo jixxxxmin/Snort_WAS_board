@@ -13,7 +13,7 @@ ARTICLE_SRC:=$(REPO)/article/src/GetArticleServlet.java
 
 
 # define command
-.PHONY: pull make_folders down menu title article restart set build clean
+.PHONY: pull make_folders delete down menu title article restart set build clean
 
 
 # git pull
@@ -27,6 +27,9 @@ make_folders:
 	mkdir -p $(ARTICLE_CLASS)
 
 # 필요 파일 download
+delete:
+	rm -f $(GSON_BOARD_JAR)/gson-2.10.1.jar
+	rm -f $(GSON_ARTICLE_JAR)/gson-2.10.1.jar
 down:
 	curl -o $(GSON_BOARD_JAR)/gson-2.10.1.jar https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
 	curl -o $(GSON_ARTICLE_JAR)/gson-2.10.1.jar https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
@@ -45,7 +48,7 @@ restart:
 
 
 # commands
-set: make_folders down
+set: make_folders delete down
 build: menu title article restart
 
 
