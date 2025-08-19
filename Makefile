@@ -1,15 +1,18 @@
 # 변수 선언
 REPO:=/home/user/Snort_WAS_board
 SERVLET_JAR:=/opt/tomcat/lib/servlet-api.jar
+GSON_JAR:=$(REPO)/board/WEB-INF/lib
 
 BOARD_CLASS:=$(REPO)/board/WEB-INF/classes
 MENU_SRC:=$(REPO)/board/src/GetMenuServlet.java
 TITLE_SRC:=$(REPO)/board/src/GetTitleServlet.java
-GSON_JAR:=$(REPO)/board/WEB-INF/lib
+
+ARTICLE_CLASS:=$(REPO)/article/WEB-INF/classes
+ARTICLE_SRC:=$(REPO)/article/src/GetArticleServlet.java
 
 
 # define command
-.PHONY: pull make_folders down menu title restart set build clean
+.PHONY: pull make_folders down menu title article restart set build clean
 
 
 # git pull
@@ -20,6 +23,7 @@ pull:
 make_folders:
 	mkdir -p $(BOARD_CLASS)
 	mkdir -p $(GSON_JAR)
+	mkdir -p $(ARTICLE_CLASS)
 
 # 필요 파일 download
 down:
@@ -30,6 +34,8 @@ menu:
 	javac -classpath "$(SERVLET_JAR):$(GSON_JAR)/gson-2.10.1.jar" -d $(BOARD_CLASS) $(MENU_SRC)
 title:
 	javac -classpath "$(SERVLET_JAR):$(GSON_JAR)/gson-2.10.1.jar" -d $(BOARD_CLASS) $(TITLE_SRC)
+article:
+	javac -classpath "$(SERVLET_JAR):$(GSON_JAR)/gson-2.10.1.jar" -d $(ARTICLE_CLASS) $(ARTICLE_SRC)
 
 # systemctl
 restart:
@@ -38,10 +44,11 @@ restart:
 
 # commands
 set: make_folders down
-build: menu title restart
+build: menu title article restart
 
 
 # compile 파일 초기화
 clean:
 	rm -f $(BOARD_CLASS)/GetMenuServlet.class
 	rm -f $(BOARD_CLASS)/GetTitleServlet.class
+	rm -f $(ARTICLE_CLASS)/GetArticleServlet.class
