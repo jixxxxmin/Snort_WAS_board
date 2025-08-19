@@ -1,7 +1,7 @@
-## Board server WAS
+# Board server WAS
 
 
-#### How to Run
+### How to Run
 - 첫 git clone 시
   `make set`
 
