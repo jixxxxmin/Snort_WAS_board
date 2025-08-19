@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 
 
 
-@WebServlet(name = "GetMenuServlet", urlPatterns = {"/board/menu"})
+// @WebServlet(name = "GetMenuServlet", urlPatterns = {"/board/menu"})
 public class GetMenuServlet extends HttpServlet {
 
     @Override

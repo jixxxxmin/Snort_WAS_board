@@ -6,9 +6,17 @@
         <servlet-name>GetMenuServlet</servlet-name>
         <servlet-class>GetMenuServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetTitleServlet</servlet-name>
+        <servlet-class>GetTitleServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>GetMenuServlet</servlet-name>
         <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetTitleServlet</servlet-name>
+        <url-pattern>/title</url-pattern>
     </servlet-mapping>
 </web-app>
