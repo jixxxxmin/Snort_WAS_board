@@ -45,6 +45,7 @@ public class GetMenuServlet extends HttpServlet {
             while (rs.next()) {
                 Map<String, Object> menuMap = new HashMap<>();
                 menuMap.put("이름", rs.getString("menu_name"));
+                menuMap.put("id", rs.getString("menu_id"));
                 menuMap.put("메뉴", new ArrayList<Map<String, Object>>());
                 menuList.add(menuMap);
 
@@ -69,6 +70,7 @@ public class GetMenuServlet extends HttpServlet {
                 Map<String, Object> parentMenu = menuIDMap.get(menuID);
 
                 Map<String, String> menuMap = new HashMap<>();
+                menuMap.put("id", rs.getString("submenu_id"));
                 menuMap.put("이름", rs.getString("submenu_name"));
                 menuMap.put("설명", rs.getString("descript"));
 
