@@ -2,13 +2,13 @@
 
 
 ### How to Run
-- 첫 git clone 시
-  ```
-  make set
-  ```
+첫 git clone 시
+```
+make set
+```
 
 
-- 이후 build
-  ```
-  make build
-  ```
+이후 build
+```
+make build
+```
