@@ -23,8 +23,9 @@ pull:
 # 폴더 생성
 make_folders:
 	mkdir -p $(BOARD_CLASS)
-	mkdir -p $(GSON_JAR)
+	mkdir -p $(GSON_BOARD_JAR)
 	mkdir -p $(ARTICLE_CLASS)
+	mkdir -p $(GSON_ARTICLE_JAR)
 
 # 필요 파일 download
 delete:
