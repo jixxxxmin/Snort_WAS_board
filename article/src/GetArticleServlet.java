@@ -45,7 +45,7 @@ public class GetArticleServlet extends HttpServlet {
 
 
         if (articleID != null) {
-            query_article = "SELECT title, texts, " +
+            query_article = "SELECT post_id, title, texts, " +
                             "CASE " +
                             "    WHEN write_date > NOW() - INTERVAL 24 HOUR THEN DATE_FORMAT(write_date, '%H:%i') " +
                             "    ELSE DATE_FORMAT(write_date, '%Y-%m-%d') " +
@@ -84,6 +84,7 @@ public class GetArticleServlet extends HttpServlet {
                 stmt.setInt(1, articleToQuery);
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
+                    articleText.put("id", rs.getString("post_id"));
                     articleText.put("title", rs.getString("title"));
                     articleText.put("content", rs.getString("texts"));
                     articleText.put("timestamp", rs.getString("display_date"));
